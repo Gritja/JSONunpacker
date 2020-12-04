@@ -1,34 +1,31 @@
 package unpacker;
 
 import javafx.scene.control.TableView;
+import java.nio.file.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Scanner;
 
+import org.json.*;
 import org.json.*;
 
 public class Reader {
 	
 	public String getJson () {
-		String jsonString = "";
-		try (Scanner scanner = new Scanner(new File("TEST.json"));) {
-			while (scanner.hasNext()) {
-
-				jsonString += scanner;
-
-			}
-
-		} catch (FileNotFoundException e) {
+		
+		try {
+			return Files.readString(Path.of("C:\\Users\\astro\\eclipse-workspace\\JSONunpacker\\src\\unpacker\\Test.json"));
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
-
 			e.printStackTrace();
-			}
-		return jsonString;
+		}
+		return "";
+		
 	}
-
-	
-
 }
 	
 //this class reads data and sends it to the unpacker(?)

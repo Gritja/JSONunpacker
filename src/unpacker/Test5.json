@@ -1,0 +1,7 @@
+{
+	"anObj" : {
+		"A property": 1,
+		"Another property": false,
+		"A third property": "Woopee",
+	}
+}
