@@ -1,5 +1,6 @@
 package unpacker;
 
+import java.io.File;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -16,6 +17,7 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class Controller {
@@ -35,6 +37,8 @@ public class Controller {
 	@FXML
 	private Button registerBtn;
 	
+	public File selectedFile;
+	
 	public void Login(ActionEvent event) throws Exception {
 		
 		loginBtn.setOnAction((ActionEvent e) -> {
@@ -43,13 +47,9 @@ public class Controller {
 			{
 				lblStatus.setStyle("-fx-text-fill: #008000");
 				lblStatus.setText("Login Success");
+				
+				
 				Stage primaryStage = new Stage();
-//				try {
-//					//root = FXMLLoader.load(getClass().getResource("/unpacker/Unpack.fxml"));
-//				} catch (IOException e1) {
-//					// TODO Auto-generated catch block
-//					e1.printStackTrace();
-//				}
 				
 				Reader r = new Reader ();
 				Unpacker u = new Unpacker ();
@@ -73,8 +73,9 @@ public class Controller {
 			}
 		});
 	}
-	
-	public void Register(ActionEvent event) throws Exception {		
+	//registrera användare
+	public void Register(ActionEvent event) throws Exception {	
+		//lambda, kolla så att en skrivit något, sedan regex för att kolla giltig epost
 		registerBtn.setOnAction((ActionEvent e) -> {
 			if (txtUserName.getText().length() > 3) {
 				if (txtPassword.getText().length() > 3) {

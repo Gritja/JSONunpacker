@@ -20,8 +20,7 @@ public class Users {
     public static boolean loginUser(String userName, String passWord) {
 		boolean allGood = false;
     	try {
-    		ArrayList<String> userList = new ArrayList<>(Files.readAllLines(Paths.get("C:\\Users\\Jonatan\\eclipse-workspace\\JSONunpacker\\src\\unpacker\\userpw.txt")));
-
+    		ArrayList<String> userList = new ArrayList<>(Files.readAllLines(Paths.get(".\\src\\unpacker\\userpw.txt")));
     		
     		for (String fromArray : userList) {
     			// ^^ går igenom ALLA strängar i listan och gör samma koll - behöver uppenbarligen sätta ett stopp när den hitta användaren och sen göra kollen.
@@ -57,7 +56,7 @@ public class Users {
 
 	public static void addUser(String userName, String passWord) {
 		try {
-			ArrayList<String> userList = new ArrayList<>(Files.readAllLines(Paths.get("C:\\Users\\astro\\eclipse-workspace\\JSONunpacker\\src\\unpacker\\userpw.txt")));
+			ArrayList<String> userList = new ArrayList<>(Files.readAllLines(Paths.get(".\\src\\unpacker\\userpw.txt")));
 			int userNo = userList.size();
 			boolean userExists = false;
 			
@@ -69,7 +68,7 @@ public class Users {
 			}
 			if (!userExists) {
 			userList.add(++userNo + ": " + userName + ", " + passWord);
-			Path updateList = Paths.get("C:\\Users\\astro\\eclipse-workspace\\JSONunpacker\\src\\unpacker\\userpw.txt");
+			Path updateList = Paths.get(".\\src\\unpacker\\userpw.txt");
 			Files.write(updateList,userList,Charset.defaultCharset());
 			
 			} else {
