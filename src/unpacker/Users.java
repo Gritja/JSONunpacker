@@ -20,7 +20,7 @@ public class Users {
     public static boolean loginUser(String userName, String passWord) {
 		boolean allGood = false;
     	try {
-    		ArrayList<String> userList = new ArrayList<>(Files.readAllLines(Paths.get("C:\\Users\\astro\\eclipse-workspace\\JSONunpacker\\src\\unpacker\\userpw.txt")));
+    		ArrayList<String> userList = new ArrayList<>(Files.readAllLines(Paths.get("C:\\Users\\Jonatan\\eclipse-workspace\\JSONunpacker\\src\\unpacker\\userpw.txt")));
 
     		
     		for (String fromArray : userList) {
@@ -33,24 +33,24 @@ public class Users {
         				allGood = true;
         			} else {
         				//javafx prompt!
-        				System.out.println("Invalid password!");
+        				//System.out.println("Invalid password!");
         			}
         		} else {
         			// javafx prompt!
-        			System.out.println(fromArray);
+        			//System.out.println(fromArray);
         			//log
-        			for (int i = 0; i < userList.size(); i++) {
-        				System.out.println(userList.get(i));
-        			}
-        			
-        			System.out.println("Invalid email!");
+//        			for (int i = 0; i < userList.size(); i++) {
+//        				System.out.println(userList.get(i));
+//        			}
+//        			
+//        			System.out.println("Invalid email!");
         		}
         	}
     	} catch (IOException e) {
     		
     	}
     	//log
-    	System.out.print("Ran!");
+    	//System.out.print("Ran!");
 		return allGood;
 
     }
@@ -77,9 +77,9 @@ public class Users {
 				System.out.println("User already exists!");
 			}
 			//log
-			for (int i = 0; i < userList.size(); i++) {
-				System.out.println(userList.get(i));
-			}
+//			for (int i = 0; i < userList.size(); i++) {
+//				System.out.println(userList.get(i));
+//			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

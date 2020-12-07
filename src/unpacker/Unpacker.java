@@ -3,8 +3,7 @@ package unpacker;
 
 import java.util.Set;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+import org.json.*;
 
 import javafx.scene.control.TreeItem;
 
